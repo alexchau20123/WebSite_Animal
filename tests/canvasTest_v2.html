@@ -7,13 +7,14 @@
   <link rel="stylesheet" media="(max-width: 640px)" href="max-640px.css">
 <link rel="stylesheet" media="(min-width: 640px)" href="min-640px.css">
   -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" href="css/canvasCSS.css">
-  <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/canvasCSS_testBootstrap.css">
+    <link rel="stylesheet" href="css/Bootstrap_customizeExtand.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
   <script>
     $(function(){
         var loadCount = [];
@@ -69,15 +70,23 @@
 </head>
 
 
-<header>
-  <a href="#" class="title">
-    <img src="images/ethGame_logo.png" alt="">
-    <p class="black">CRYPTO</p>
-    <p class="white">ANIMAL</p>
-  </a>
-  <a href="#" class="marketplace white">MARKETPLACE</a>
-  <a href="#" class="signup black">SIGN IN</a>
-</header>
+<header></header>
+  <header class="navbar bg-teal navbar-expand col-10 offset-1
+  navbar-expand-xs">
+    <a class="navbar-brand mr-auto" href="#">
+      <img src="images/ethGame_logo.png" alt="logo">
+      <p class="black">CRYPTO</p><p class="white">ANIMAL</p>
+    </a>
+
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link black" href="#">SIGN IN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link white" href="#">MARKETPLACE</a>
+      </li>
+    </ul>
+  </header>
 
 <nav>
     <a href="#">For Sale</a>

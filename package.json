@@ -1,0 +1,33 @@
+{
+  "name": "game_server",
+  "version": "1.0.0",
+  "description": "Game server of ETH game.",
+  "main": "app/index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node test/all.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:kgl_game/game_server.git"
+  },
+  "author": "SC",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "connect-redis": "^3.3.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.8",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mustache": "^2.3.0",
+    "mysql": "^2.15.0",
+    "redis": "^2.8.0",
+    "session-file-store": "^1.2.0",
+    "underscore": "^1.8.3"
+  }
+}

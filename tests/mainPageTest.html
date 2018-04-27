@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>Main Page</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='css/mainPageCSS.css'>
+
+<script>
+
+$(document).ready(function () {
+  var canvas = document.getElementById("bg");
+  var ctx = canvas.getContext("2d");
+
+  ctx.beginPath();
+  ctx.moveTo(15,257);
+  ctx.lineTo(45, 730);
+  ctx.lineTo(325, 720);
+  ctx.lineTo(325, 230);
+  ctx.closePath();
+  ctx.fillStyle = "#FFFFFFFF";
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(140, 55);
+  ctx.lineTo(142, 440);
+  ctx.lineTo(215, 443);
+  ctx.lineTo(207, 50);
+  ctx.closePath();
+  ctx.fillStyle = "#0075D060";
+  ctx.fill();
+
+  ctx.beginPath();
+  ctx.moveTo(80,0);
+  ctx.lineTo(127, 630);
+  ctx.lineTo(433, 630);
+  ctx.lineTo(465, 0);
+  ctx.closePath();
+  ctx.fillStyle = "#25850060";
+  ctx.fill();
+});
+
+
+</script>
+
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark nav-left">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">
+        <img src="images/ethGame_logo.png" alt="">
+        <p class="black"><b>CRYPTO</b></p>
+        <p class="white"><b>ANIMAL</b></p>
+      </a>
+    </div>
+
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">SIGN IN</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">MARKETPLACE</a>
+      </li>
+    </ul>
+</nav>
+
+<!-- background image  -->
+<canvas id="bg" width="800" height="800">
+</canvas>
+
+<div class="slogan">
+  <div>
+    <h1><b>Collect.</b></h1>
+    <h1><b>Team up.</b></h1>
+    <h1><b>Combat.</b></h1>
+  </div>
+
+  <div class="slogan-bottom">
+    <b>Collect digital animals on the blockchain.</b>
+  </div>
+</div>
+
+<!-- place image here -->
+<div>
+  <img src="#" alt="">
+</div>
+
+<a href="/" class="btn btn-lg btn-pos">
+  Start
+</a>
+
+</body>
+</html>

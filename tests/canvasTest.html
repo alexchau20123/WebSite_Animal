@@ -1,0 +1,117 @@
+<html>
+<head>
+  <title>Hello World!!!</title>
+  <link rel="stylesheet" href="css/canvasCSS.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+  <script>
+    {{#monsters}}
+    $(function(){
+    		console.log({{num}},"{{{bg}}}");
+        var canvas=document.getElementById({{num}});
+        var ctx=canvas.getContext("2d");
+        var loadCount = 0;
+
+        var imageURLs = ["{{{bg}}}",
+                         "{{{shadow}}}",
+                         "{{{b_deco}}}",
+                         "{{{tail}}}",
+                         "{{{hand}}}",
+                         "{{{leg}}}",
+                         "{{{body}}}",
+                         "{{{head}}}",
+                         "{{{f_deco}}}"];
+
+
+      var images=[];
+        function tryToDraw(){
+          loadCount++;
+          if (loadCount == imageURLs.length){
+            for(var i = 0; i < loadCount; i++){
+              try{
+                ctx.drawImage(images[i], 0, 0,canvas.width,canvas.height);
+              } catch(e){};
+            }
+          }
+        }
+
+        for(var i = 0; i < imageURLs.length; i++){
+         var img = new Image();
+          img.src = imageURLs[i];
+          if (imageURLs[i]){
+            var img = new Image();
+            img.src = imageURLs[i];
+            img.onload = tryToDraw;
+            img.onerror = tryToDraw;
+            images[i] = img;
+          } else {
+            loadCount++;
+          }
+        }
+
+    });
+    {{/monsters}}
+  </script>
+</head>
+
+<header>
+  <a href="#" class="title">
+    <img src="" alt="">
+    <p class="black">CRYPTO</p>
+    <p class="white">ANIMAL</p>
+  </a>
+  <a href="#" class="marketplace white">MARKETPLACE</a>
+  <a href="#" class="signup black">SIGN IN</a>
+
+
+</header>
+
+<nav>
+    <a href="#">For Sale</a>
+    <a href="#">Manufacture</a>
+    <a href="#">All</a>
+    <a href="#" class="newButton">New</a>
+</nav>
+
+<div class="SortBy Text_Style">
+  <p>SORT BY</p>
+  <select>
+    <option value="newest">Newest</option>
+    <option value="oldest">Oldest</option>
+    <option value="">Whatever~</option>
+    <option value=""></option>
+  </select>
+</div>
+
+<body>
+    <div class="canvas_Line">
+      {{#monsters}}
+      <div class="Bound Text_Style">
+        <canvas id={{num}} width="256" height="256"></canvas>
+        <p>Status:&nbsp</p>
+        <div>
+          <p>ACTIVE<!--{{Status01}}--></p>
+          <p>Racing<!--{{Status02}}--></p>
+        </div>
+        <p>Lv 1<!--{{LEVEL}}--></p>
+      </div>
+      <p>Animal #1234<!--{{Animal_ID}}--></p>
+    {{/monsters}}
+   </div>
+
+    <div class="pagination" align="center" >
+      <a href="#">&laquo;</a>
+      <a href="#" title="page_1" class="Page_active">1</a>
+      <a href="#" title="page_2">2</a>
+      <a href="#" title="page_3">3</a>
+      <a href="#" title="page_4">4</a>
+      {{#page}}
+      <a href="#">{{numOfPage}}</a>
+      {{/page}}
+      <a href="#">&raquo;</a>
+    </div>
+
+</body>
+
+<footer>
+</footer>
+</html>

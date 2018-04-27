@@ -1,0 +1,150 @@
+<html>
+<head>
+  <title>Hello World!!!</title>
+
+  <!--
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" media="(max-width: 640px)" href="max-640px.css">
+<link rel="stylesheet" media="(min-width: 640px)" href="min-640px.css">
+  -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="css/canvasCSS.css">
+  <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+  <script>
+    $(function(){
+        var loadCount = [];
+
+        var imageURLs = {};
+
+        {{#monsters}}
+        imageURLs["{{num}}"] = ["{{{bg}}}",
+                             "{{{shadow}}}",
+                             "{{{b_deco}}}",
+                             "{{{tail}}}",
+                             "{{{hand}}}",
+                             "{{{leg}}}",
+                             "{{{body}}}",
+                             "{{{head}}}",
+                             "{{{f_deco}}}"];
+        {{/monsters}}
+
+
+      var images=[];
+
+      function tryToDraw(i){
+        loadCount[i]++;
+        if (loadCount[i] == imageURLs[i].length){
+          var canvas=document.getElementById(i);
+          var ctx=canvas.getContext("2d");
+          for(var j = 0; j < loadCount[i]; j++){
+            try{
+              ctx.drawImage(images[i][j], 0, 0,canvas.width,canvas.height);
+            } catch(e){ };
+          }
+        }
+      }
+
+      for (var i in imageURLs){
+        images[i] = []
+        loadCount[i] = 0
+        let key = i;
+        for(var j = 0; j < imageURLs[key].length; j++){
+          if (imageURLs[key][j]){
+            var img = new Image();
+            img.src = imageURLs[key][j];
+            img.onload = function(){ tryToDraw(key); }
+            img.onerror = function(){ tryToDraw(key); }
+            images[key][j] = img;
+          } else {
+            loadCount[key]++;
+          }
+        }
+      }
+    });
+  </script>
+</head>
+
+<header>
+  <a href="#" class="title">
+    <img src="" alt="">
+    <p class="black">CRYPTO</p>
+    <p class="white">ANIMAL</p>
+  </a>
+  <a href="#" class="marketplace white">MARKETPLACE</a>
+  <a href="#" class="signup black">SIGN IN</a>
+</header>
+
+<nav>
+    <a href="#">For Sale</a>
+    <a href="#">Manufacture</a>
+    <a href="#">All</a>
+    <a href="#" class="newButton">New</a>
+</nav>
+
+<div class="SortBy Text_Style">
+
+    <select>
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+      <option value="">Whatever~</option>
+      <option value=""></option>
+    </select>
+
+        <p>SORT BYsss</p>
+
+</div>
+
+<body>
+  <div class="canvas_Line">
+    {{#monsters}}
+    <div class="canvas">
+
+      <div class="Bound Text_Style">
+        <canvas id={{num}} width="256" height="256"></canvas>
+        <p>Status:&nbsp</p>
+        <div>
+          <p>ACTIVE<!--{{Status01}}--></p>
+          <p>Racing<!--{{Status02}}--></p>
+        </div>
+        <p>Lv 1<!--{{LEVEL}}--></p>
+      </div>
+
+      <p class="Animal_ID">Animal #1234<!--{{Animal_ID}}--></p>
+    </div>
+  {{/monsters}}
+  </div>
+
+  <ul class="pagination">
+    <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+    <!-- <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item "><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+    {{#page}}
+      <li class="{{pageClass}}"><a class="page-link" href="{{{numOfPageLink}}}">{{numOfPage}}</a></li>
+    {{/page}}
+    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+  </ul>
+
+<!--
+  <div class="pagination" align="center" >
+    <a href="#">&laquo;</a>
+    <a href="#" title="page_1" class="Page_active">1</a>
+    <a href="#" title="page_2">2</a>
+    <a href="#" title="page_3">3</a>
+    <a href="#" title="page_4">4</a>
+    {{#page}}
+    <a href="#">{{numOfPage}}</a>
+    {{/page}}
+    <a href="#">&raquo;</a>
+  </div>
+-->
+</body>
+
+<footer>
+</footer>
+
+</html>

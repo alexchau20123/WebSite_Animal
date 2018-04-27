@@ -1,0 +1,197 @@
+/*---------init---------*/
+:root {
+  --teal-color: #41b0ac;
+  --bg-color:#dbe6ea;
+  --gray-color:#939393;
+  --black-color:#000;
+  --white-color:#FFF;
+  --green-color:#38da8a;
+  --blue-color:#1b7cd6;
+
+  --card-width:296px;
+  --NumOfCardinRow-num:4;
+  --canvas-width:calc((100% - (var(--card-width) * var(--NumOfCardinRow-num)))/2)
+}
+
+.black{color:var(--black-color);}
+.white{color:var(--white-color);}
+.gray{color:var(--gray-color);}
+.green{color:var(--green-color);}
+.blue{color:var(--blue-color);}
+.teal{color:var(--teal-color);}
+
+.bg-black{background-color:var(--black-color);}
+.bg-white{background-color:var(--white-color);}
+.bg-gray{background-color:var(--gray-color);}
+.bg-green{background-color:var(--green-color);}
+.bg-teal{background-color:var(--teal-color);}
+.bg-blue{background-color:var(--blue-color);}
+.bg-teal{background-color:var(--teal-color);}
+
+
+
+html,body{
+    margin:0;
+    background-color:var(--bg-color);
+}
+
+a, p,a:hover{
+    text-decoration: none;
+    color:var(--gray-color);
+}
+
+/*---------End init---------*/
+
+
+
+/*---------header---------*/
+header{
+    height:60px;
+    width:80%;
+    background-color:var(--header-color);
+    margin:0 10%;
+    padding:10px 0;
+}
+
+.title img{
+    width:40px;
+    height:40px;
+    margin-left:10px;
+}
+
+header .black,.white{
+    font-weight: bold;
+    display:inline;
+    font-size:20px;
+}
+
+.marketplace,.signup{
+    float: right;
+    margin:5px 25px;
+}
+/*---------End header---------*/
+
+
+/*---------Nav Bar---------*/
+nav{
+    text-align :right;
+    margin:25px 15% 10px 0;
+    position:relative;
+}
+
+nav a {
+    margin:0 15px;
+    color:var(--gray-color);
+    display:inline;
+}
+
+nav .newButton{
+    color:var(--white-color);
+    background-color:var(--green-color);
+    border-radius:15px;
+    padding:5px 15px;
+    margin-right:0;
+}
+/*---------End Nav Bar---------*/
+
+
+/*----------SortBy----------*/
+.SortBy{
+    border-top:2px solid var(--gray-color);
+    width:72%;
+    margin:15px 14% 50px;
+    padding:5px 0;
+}
+
+.SortBy p{
+    float:right;
+    margin:0 15px;
+}
+
+.SortBy select{
+    float:right;
+    position:relative;
+    border-radius:15px;
+    height:25px;
+    font-size:10px;
+    font-weight:bold;
+    min-width:100px;
+    border-color:transparent;
+}
+/*----------End SortBy----------*/
+
+
+/*----------Body_Canvas----------*/
+.canvas_Group{
+    /*background-color:#d9f7f7;*/
+    display:flex;
+    flex-flow:row wrap;
+    width:calc(var(--card-width) * var(--NumOfCardinRow-num));
+
+    margin:auto var(--canvas-width);
+}
+
+.canvas_Unit{
+    display:flex;
+    flex-flow:column wrap;
+    margin:5px 10px 20px;
+}
+
+/*Card buttom*/
+.canvas_Bound{
+    padding:10px;
+    background-color:var(--white-color);
+    border-radius:15px;
+    box-shadow: 0px 0px 8px 0 #888888;
+    display:flex;
+    flex-flow:column wrap;
+}
+
+.canvas_Bound:hover{
+    box-shadow: 0px 0px 10px 10px #00eab3;
+}
+
+/*row of datas */
+.canvas_details{
+     position:relative;
+     margin-top:15px;
+     display:flex;
+}
+
+/*Two of status datas*/
+.canvas_details p{
+    line-height:5px;
+}
+
+/*Level*/
+.canvas_details > p:last-child{
+    position:absolute;
+    right:0;
+}
+
+/*Animal ID*/
+.canvas_Unit > p:last-child{
+    text-align:center;
+    font-size:10px;
+    margin-top:5px;
+}
+
+/*status color*/
+.status-active{
+    color:var(--green-color);
+}
+
+.status-coolDown{
+    color:var(--blue-color);
+}
+/*status color*/
+
+/*----------End Body_Canvas----------*/
+
+/*----------Pagination----------*/
+
+.pagination{
+
+}
+
+/*----------End Pagination----------*/

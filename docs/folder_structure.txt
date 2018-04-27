@@ -1,0 +1,20 @@
+Folder Structure
+----------------
+/app for server application
+/config for configuration files
+/docs is used to store documents/readme/instructions
+/libs is usually used for custom classes/functions/modules
+#/vendor or /support contains 3rd party libraries (added as git sub-module when using git as source control)
+/spec contains specifications for BDD tests.
+/tests contains the unit-tests for an application (e.g. use testing framework)
+
+*/models contains all your ORM models (called Schemas in mongoose)
+*/views contains your view-templates (using any templating language supported in express)
+/public contains all static content (images, style-sheets, client-side JavaScript)
+/public/images contains image files
+       /pdf contains static pdf files
+       /css contains style sheets (or compiled output by a css engine)
+       /js contains client side JavaScript
+/src/scripts related source files, and script files
+
+[END]

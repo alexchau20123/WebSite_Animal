@@ -1,0 +1,96 @@
+/*---------init---------*/
+:root {
+  --header-color: #41b0ac;
+  --bg-color:#dbe6ea;
+  --gray-color:#939393;
+  --black-color:#000;
+  --white-color:#FFF;
+  --green-color:#38da8a;
+  --blue-color:#1b7cd6;
+
+  --card-width:296px;
+
+  --background-color:#dce5ea;
+  --palegreen-color:#96c08b;
+  --darkgreen-color:#57a387;
+}
+
+.black{color:var(--black-color);}
+.white{color:var(--white-color);}
+.gray{color:var(--gray-color);}
+.green{color:var(--green-color);}
+.blue{color:var(--blue-color);}
+
+body {
+  /* background-image: url('../images/crytoback_test.png');
+  background-size:cover; */
+    background-color:#dce5ea
+}
+
+/* a, p, a:hover {
+  text-decoration: none;
+  color: var(--gray-color);
+} */
+
+
+/*------ nav-------*/
+.nav-left {
+  margin-left: 210px;
+  margin-top: 60px;
+}
+
+
+nav p {
+  display:inline;
+  margin-left: -5px;
+}
+
+.nav-link {
+  color: var(--black-color) !important;
+  margin-right: 50px;
+}
+/*------------------*/
+
+#bg {
+  position: absolute;
+  top:0px;
+  left:0px;
+  z-index:-1;
+}
+
+/*-------------------------*/
+.slogan {
+  margin-top: 100px;
+  margin-left: 250px;
+  text-rendering: auto;
+}
+
+.slogan h1 {
+  font-size: 70px;
+  line-height: 70px;
+}
+
+.slogan-bottom {
+  margin-top: 35px;
+}
+/*-------------------------*/
+
+.btn {
+  color: white;
+  font-size: 35px;
+  background-color: #57a387;
+  padding: 50px, 50px;
+}
+
+.btn-pos {
+  position: absolute;
+  left: 250px;
+  top: 680px;
+  padding: 10px 40px;
+  border-radius: 15px;
+  box-shadow: 7px 5px #777777;
+}
+
+.btn-pos:hover {
+  color: white;
+}
